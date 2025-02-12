@@ -1,7 +1,8 @@
 
 📌 Project Overview
 
-     M-Suite is a robust enterprise application designed to streamline business operations, including sales, warehousing, inventory management, and user authentication. The platform leverages ASP.NET Core MVC and Entity Framework Core       to provide a scalable and secure system for managing transactions and user activities.
+M-Suite is a robust enterprise application designed to streamline business operations, including sales, warehousing, inventory management, and user authentication.
+The platform leverages ASP.NET Core MVC and Entity Framework Core to provide a scalable and secure system for managing transactions and user activities.
 
 🚀 Features
 
