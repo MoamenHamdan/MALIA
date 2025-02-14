@@ -1,0 +1,60 @@
+﻿@model M_Suite.Models.GeoLocation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GeoLocation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlCdIdGeo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlCdIdGeo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlGlId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlGlId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlLevel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlLevel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlDescriptionLan1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlDescriptionLan1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlDescriptionLan2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlDescriptionLan2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlDescriptionLan3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlDescriptionLan3)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.GlId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

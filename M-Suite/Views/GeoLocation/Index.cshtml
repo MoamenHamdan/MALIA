@@ -1,0 +1,71 @@
+﻿@model IEnumerable<M_Suite.Models.GeoLocation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GlCdIdGeo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlGlId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlDescriptionLan1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlDescriptionLan2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlDescriptionLan3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlCdIdGeo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlGlId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlDescriptionLan1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlDescriptionLan2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlDescriptionLan3)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GlId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GlId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GlId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
