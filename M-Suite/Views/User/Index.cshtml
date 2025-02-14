@@ -1,0 +1,200 @@
+﻿@model IEnumerable<M_Suite.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsThpId) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsCdIdGen) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsCdIdTtl) *@
+            @* </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.UsCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsShortName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsLogin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsReceiveNotification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsDbUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsImported)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsReadonly)
+            </th>
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsToken) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsRoute) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsPrefix) *@
+            @* </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.UsType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsUs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsThpId) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsCdIdGen) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsCdIdTtl) *@
+            @* </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.UsCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsReceiveNotification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsExpiryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsDbUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsImported)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsReadonly)
+            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsToken) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsRoute) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsPrefix) *@
+            @* </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.UsType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsUs.UsId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<style>
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:hover {
+            background-color: #ddd;
+        }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+</style>
