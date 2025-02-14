@@ -1,0 +1,63 @@
+﻿@model M_Suite.Models.GeoLocation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GeoLocation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GlCdIdGeo" class="control-label"></label>
+                <input asp-for="GlCdIdGeo" class="form-control" />
+                <span asp-validation-for="GlCdIdGeo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlGlId" class="control-label"></label>
+                <input asp-for="GlGlId" class="form-control" />
+                <span asp-validation-for="GlGlId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlLevel" class="control-label"></label>
+                <input asp-for="GlLevel" class="form-control" />
+                <span asp-validation-for="GlLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlCode" class="control-label"></label>
+                <input asp-for="GlCode" class="form-control" />
+                <span asp-validation-for="GlCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlDescriptionLan1" class="control-label"></label>
+                <input asp-for="GlDescriptionLan1" class="form-control" />
+                <span asp-validation-for="GlDescriptionLan1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlDescriptionLan2" class="control-label"></label>
+                <input asp-for="GlDescriptionLan2" class="form-control" />
+                <span asp-validation-for="GlDescriptionLan2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlDescriptionLan3" class="control-label"></label>
+                <input asp-for="GlDescriptionLan3" class="form-control" />
+                <span asp-validation-for="GlDescriptionLan3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
