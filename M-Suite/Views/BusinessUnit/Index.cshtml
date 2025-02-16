@@ -1,0 +1,101 @@
+﻿@model IEnumerable<M_Suite.Models.BusinessUnit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BuCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuDescriptionLan1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuDescriptionLan2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuDescriptionLan3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuImpUid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuLeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuOuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuOrgCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuPrefix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuBu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuCp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuDescriptionLan1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuDescriptionLan2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuDescriptionLan3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuImpUid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuLeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuOuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuOrgCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuPrefix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuBu.BuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuCp.CpId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BuId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BuId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BuId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

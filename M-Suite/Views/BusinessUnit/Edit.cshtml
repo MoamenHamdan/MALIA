@@ -1,0 +1,89 @@
+﻿@model M_Suite.Models.BusinessUnit
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BusinessUnit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BuId" />
+            <div class="form-group">
+                <label asp-for="BuBuId" class="control-label"></label>
+                <select asp-for="BuBuId" class="form-control" asp-items="ViewBag.BuBuId"></select>
+                <span asp-validation-for="BuBuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuCpId" class="control-label"></label>
+                <select asp-for="BuCpId" class="form-control" asp-items="ViewBag.BuCpId"></select>
+                <span asp-validation-for="BuCpId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuCode" class="control-label"></label>
+                <input asp-for="BuCode" class="form-control" />
+                <span asp-validation-for="BuCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuDescriptionLan1" class="control-label"></label>
+                <input asp-for="BuDescriptionLan1" class="form-control" />
+                <span asp-validation-for="BuDescriptionLan1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuDescriptionLan2" class="control-label"></label>
+                <input asp-for="BuDescriptionLan2" class="form-control" />
+                <span asp-validation-for="BuDescriptionLan2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuDescriptionLan3" class="control-label"></label>
+                <input asp-for="BuDescriptionLan3" class="form-control" />
+                <span asp-validation-for="BuDescriptionLan3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuPath" class="control-label"></label>
+                <input asp-for="BuPath" class="form-control" />
+                <span asp-validation-for="BuPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuImpUid" class="control-label"></label>
+                <input asp-for="BuImpUid" class="form-control" />
+                <span asp-validation-for="BuImpUid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuLeId" class="control-label"></label>
+                <input asp-for="BuLeId" class="form-control" />
+                <span asp-validation-for="BuLeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuOuId" class="control-label"></label>
+                <input asp-for="BuOuId" class="form-control" />
+                <span asp-validation-for="BuOuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuOrgCode" class="control-label"></label>
+                <input asp-for="BuOrgCode" class="form-control" />
+                <span asp-validation-for="BuOrgCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuPrefix" class="control-label"></label>
+                <input asp-for="BuPrefix" class="form-control" />
+                <span asp-validation-for="BuPrefix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
