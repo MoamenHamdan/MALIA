@@ -12,9 +12,9 @@ namespace M_Suite.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly MaliaContext _context;
+        private readonly Context.MaliaContext _context;
 
-        public ItemController(MaliaContext context)
+        public ItemController(Context.MaliaContext context)
         {
             _context = context;
         }
