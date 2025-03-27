@@ -1,0 +1,168 @@
+@model M_Suite.Models.Item
+
+@{
+    ViewData["Title"] = "Create";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+ <div class="profile-content">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="general-info">General Info</div>
+                        <div class="tab" data-tab="item-properties">Item Properties</div>
+                        <div class="tab" data-tab="uom">UOM</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="general-info">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <div class="form-group">
+                                    <label asp-for="ItCode"><span class="color-indicator color-red"></span>Code</label>
+                                    <input asp-for="ItCode" class="form-control">
+                                    <span asp-validation-for="ItCode" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label asp-for="ItCdIdIgp"><span class="color-indicator color-red"></span>Item Group</label>
+                                    <input asp-for="ItCdIdIgp" class="form-control">
+                                    <span asp-validation-for="ItCdIdIgp" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label asp-for="ItWeight"><span class="color-indicator color-green"></span>Weight</label>
+                                    <input asp-for="ItWeight" class="form-control">
+                                    <span asp-validation-for="ItWeight" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label asp-for="ItDescriptionLan1"><span class="color-indicator color-red"></span>Description AR</label>
+                                    <input asp-for="ItDescriptionLan1" class="form-control">
+                                    <span asp-validation-for="ItDescriptionLan1" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label asp-for="ItDescriptionLan2"><span class="color-indicator color-red"></span>Description EN</label>
+                                    <input asp-for="ItDescriptionLan2" class="form-control">
+                                    <span asp-validation-for="ItDescriptionLan2" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="ItDescriptionLan3"><span class="color-indicator color-red"></span>Description FR</label>
+                                    <input asp-for="ItDescriptionLan3" class="form-control">
+                                    <span asp-validation-for="ItDescriptionLan3" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><span class="color-indicator color-red"></span>Base Unit</label>
+                                    <input type="text">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><span class="color-indicator color-green"></span>Barcode</label>
+                                    <input type="text">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><span class="color-indicator color-red"></span>Business Unit</label>
+                                    <div class="password-input">
+                                        <input type="text" id="businessUnitInput">
+                                        <div class="form-field-actions">
+                                            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
+                                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                            <svg id="plusIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; margin-left: 5px;">
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5v14"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="right-side">
+                                <div class="form-group">
+                                    <label>Active</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span asp-validation-for="ItActive" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Saleable</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span asp-validation-for="ItIsSaleable" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Lot Enabled</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span asp-validation-for="ItHasLot" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Production Date</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span asp-validation-for="ItHasProductionDate" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span asp-validation for="ItHasExpiryDate" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Service Defined</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span asp-validation-for="ItIsService" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Asset Defined</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span asp-validation-for="ItIsAsset" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Serial Enabled</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span asp-validation-for="ItHasSerial" class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Bad Return</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span asp-validation-for="ItIsBadReturn" class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="actions">
+                            <a asp-action="Index" class="btn btn-cancel">Cancel</a>
+                            <button type="submit" class="btn btn-save">Save</button>
+                        </div>
+      
+                  </div>
+ </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
