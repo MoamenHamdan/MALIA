@@ -3,129 +3,160 @@
 @{
     ViewData["Title"] = "Create";
 }
+@section Styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+    <div class="profile-content">
+        <div class="profile-header">
+            <h2>Create User</h2>
+        </div>
 
-<h1>Create</h1>
-
-<h4>User</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+        <div class="profile-details">
+            <div class="form-row">
+                <div class="form-field">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UsUsId" class="control-label"></label>
-                <select asp-for="UsUsId" class ="form-control" asp-items="ViewBag.UsUsId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsThpId" class="control-label"></label>
-                <input asp-for="UsThpId" class="form-control" />
-                <span asp-validation-for="UsThpId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsCdIdGen" class="control-label"></label>
-                <input asp-for="UsCdIdGen" class="form-control" />
-                <span asp-validation-for="UsCdIdGen" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsCdIdTtl" class="control-label"></label>
-                <input asp-for="UsCdIdTtl" class="form-control" />
-                <span asp-validation-for="UsCdIdTtl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsCode" class="control-label"></label>
+                <label asp-for="UsCode" class="control-label">
+                    <span class="color-indicator color-red"></span>Code
+                </label>
                 <input asp-for="UsCode" class="form-control" />
                 <span asp-validation-for="UsCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UsFirstName" class="control-label"></label>
+                <label asp-for="UsFirstName" class="control-label">
+                    <span class="color-indicator color-red"></span>FirstName
+                </label>
                 <input asp-for="UsFirstName" class="form-control" />
                 <span asp-validation-for="UsFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UsLastName" class="control-label"></label>
+                <label asp-for="UsLastName" class="control-label">
+                     <span class="color-indicator color-red"></span>LastName
+                </label>
                 <input asp-for="UsLastName" class="form-control" />
                 <span asp-validation-for="UsLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UsShortName" class="control-label"></label>
+                <label asp-for="UsShortName" class="control-label">
+                     <span class="color-indicator color-red"></span>ShortName
+                </label>
                 <input asp-for="UsShortName" class="form-control" />
                 <span asp-validation-for="UsShortName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UsLogin" class="control-label"></label>
+                <label asp-for="UsLogin" class="control-label">
+                     <span class="color-indicator color-red"></span>Login
+                </label>
                 <input asp-for="UsLogin" class="form-control" />
                 <span asp-validation-for="UsLogin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UsPassword" class="control-label"></label>
-                <input asp-for="UsPassword" class="form-control" />
-                <span asp-validation-for="UsPassword" class="text-danger"></span>
+                <label @*asp-for= profile*@ class="control-label">
+                     <span class="color-indicator color-red"></span>profile
+                </label>
+                <select @*asp-for= profile*@ class="form-control" />
+                <span @*asp-validation-for="profile"*@ class="text-danger"></span>
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="UsEmail" class="control-label"></label>
+                <label @*asp-for= supervisor*@ class="control-label">
+                     <span class="color-indicator color-green"></span>Supervisor
+                </label>
+                <select @*asp-for= supervisor*@ class="form-control" />
+                <span @*asp-validation-for="supervisor"*@ class="text-danger"></span>
+                </select>
+            </div>
+            <div class="form-group">
+                <label @*asp-for= gender*@ class="control-label">
+                     <span class="color-indicator color-green"></span>Gender
+                </label>
+                <select @*asp-for= gender*@ class="form-control" />
+                <span @*asp-validation-for="gender"*@ class="text-danger"></span>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><span class="color-indicator color-green"></span>Equivalent Customer</label>
+                <div class="password-input">
+                    <input type="text" id="businessUnitInput">
+                        <div class="form-field-actions">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg id="plusIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; margin-left: 5px;">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsEmail" class="control-label">
+                    <span class="color-indicator color-green"></span>Email
+                </label>
                 <input asp-for="UsEmail" class="form-control" />
                 <span asp-validation-for="UsEmail" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UsReceiveNotification" class="control-label"></label>
-                <input asp-for="UsReceiveNotification" class="form-control" />
-                <span asp-validation-for="UsReceiveNotification" class="text-danger"></span>
+             <div class="form-group">
+                <label><span class="color-indicator color-red"></span>Business Unit</label>
+                <div class="password-input">
+                    <input type="text" id="businessUnitInput">
+                        <div class="form-field-actions">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg id="plusIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; margin-left: 5px;">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+             <div class="form-group">
+                <label><span class="color-indicator color-green"></span>Warehouse</label>
+                <div class="password-input">
+                    <input type="text" id="businessUnitInput">
+                        <div class="form-field-actions">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg id="plusIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; margin-left: 5px;">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="UsExpiryDate" class="control-label"></label>
-                <input asp-for="UsExpiryDate" class="form-control" />
-                <span asp-validation-for="UsExpiryDate" class="text-danger"></span>
+                <label><span class="color-indicator color-green"></span>Default Warehouse</label>
+                <div class="password-input">
+                    <input type="text" id="businessUnitInput">
+                        <div class="form-field-actions">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg id="plusIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; margin-left: 5px;">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="UsDeleted" class="control-label"></label>
-                <input asp-for="UsDeleted" class="form-control" />
-                <span asp-validation-for="UsDeleted" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsDbUser" class="control-label"></label>
-                <input asp-for="UsDbUser" class="form-control" />
-                <span asp-validation-for="UsDbUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsImported" class="control-label"></label>
-                <input asp-for="UsImported" class="form-control" />
-                <span asp-validation-for="UsImported" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsReadonly" class="control-label"></label>
-                <input asp-for="UsReadonly" class="form-control" />
-                <span asp-validation-for="UsReadonly" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsToken" class="control-label"></label>
-                <input asp-for="UsToken" class="form-control" />
-                <span asp-validation-for="UsToken" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsRoute" class="control-label"></label>
-                <input asp-for="UsRoute" class="form-control" />
-                <span asp-validation-for="UsRoute" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsPrefix" class="control-label"></label>
-                <input asp-for="UsPrefix" class="form-control" />
-                <span asp-validation-for="UsPrefix" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsType" class="control-label"></label>
-                <input asp-for="UsType" class="form-control" />
-                <span asp-validation-for="UsType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+           <div class="actions">
+                            <a asp-action="Index" class="btn btn-cancel">Cancel</a>
+                            <button type="submit" class="btn btn-save">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -53,8 +53,6 @@ public partial class User
 
     public virtual ICollection<CallCycle> CallCycles { get; set; } = new List<CallCycle>();
 
-    public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
-
     public virtual ICollection<User> InverseUsUs { get; set; } = new List<User>();
 
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
@@ -63,7 +61,7 @@ public partial class User
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 
-    public virtual User? UsUs { get; set; }
+    public virtual Thirdparty? UsThp { get; set; }
 
-    public virtual ICollection<UserProfile> UserProfiles { get; set; } = new List<UserProfile>();
+    public virtual User? UsUs { get; set; }
 }

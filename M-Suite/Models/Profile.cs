@@ -12,6 +12,4 @@ public partial class Profile
     public string PrDescription { get; set; } = null!;
 
     public short PrActive { get; set; }
-
-    public virtual ICollection<UserProfile> UserProfiles { get; set; } = new List<UserProfile>();
 }

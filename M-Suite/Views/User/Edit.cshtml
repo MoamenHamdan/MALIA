@@ -3,11 +3,13 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>User</h4>
-<hr />
+@section Styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+<div class="profile-content">
+        <div class="profile-header">
+            <h2>User Edit</h2>
+        </div>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -133,7 +135,7 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

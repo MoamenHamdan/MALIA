@@ -15,9 +15,9 @@ namespace M_Suite.Controllers
 {
     public class UserController : Controller
     {
-        private readonly MaliaContext _context;
+        private readonly Context.MaliaContext _context;
 
-        public UserController(MaliaContext context)
+        public UserController(Context.MaliaContext context)
         {
             _context = context;
         }
