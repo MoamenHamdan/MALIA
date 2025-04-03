@@ -4,11 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Users</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<div class="row">
+	<div class="col-md-12">
+		<form asp-action="Index" method="get">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" name="SearchString" placeholder="Search by Code, First Name, Last Name, Short Name, Username" value="@ViewData["CurrentFilter"]" />
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit">Search</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -22,47 +34,46 @@
             @*     @Html.DisplayNameFor(model => model.UsCdIdTtl) *@
             @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.UsCode)
+                Code
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsFirstName)
+                First Name 
+            </th>
+            <th>Last Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsLastName)
+                Short Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsShortName)
+               Username 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsLogin)
+               Password
             </th>
+            @* <th> *@
+            @*    Email *@
+            @* </th> *@
+            @* <th> *@
+            @*     User Receive Notification *@
+            @* </th> *@
+            @* <th> *@
+            @*     User Expiry Date *@
+            @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.UsPassword)
+                Active
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsReceiveNotification)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsExpiryDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsActive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsDeleted)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsDbUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsImported)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsReadonly)
-            </th>
+            @* <th> *@
+            @*    User Deleted  *@
+            @* </th> *@
+            @* <th> *@
+            @*     User Db User *@
+            @* </th> *@
+            @* <th> *@
+            @*     User Imported *@
+            @* </th> *@
+            @* <th> *@
+            @*     User Readonly *@
+            @* </th> *@
             @* <th> *@
             @*     @Html.DisplayNameFor(model => model.UsToken) *@
             @* </th> *@
@@ -72,13 +83,13 @@
             @* <th> *@
             @*     @Html.DisplayNameFor(model => model.UsPrefix) *@
             @* </th> *@
-            <th>
-                @Html.DisplayNameFor(model => model.UsType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsUs)
-            </th>
-            <th></th>
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsType) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UsUs) *@
+            @* </th> *@
+          
         </tr>
     </thead>
     <tbody>
@@ -111,30 +122,30 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UsPassword)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsReceiveNotification)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsExpiryDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsActive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsDeleted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsDbUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsImported)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsReadonly)
-            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsEmail) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsReceiveNotification) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsExpiryDate) *@
+            @* </td> *@
+            <td> 
+             @Html.DisplayFor(modelItem => item.UsActive)
+             </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsDeleted) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsDbUser) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsImported) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsReadonly) *@
+            @* </td> *@
             @* <td> *@
             @*     @Html.DisplayFor(modelItem => item.UsToken) *@
             @* </td> *@
@@ -144,12 +155,12 @@
             @* <td> *@
             @*     @Html.DisplayFor(modelItem => item.UsPrefix) *@
             @* </td> *@
-            <td>
-                @Html.DisplayFor(modelItem => item.UsType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsUs.UsId)
-            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsType) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UsUs.UsId) *@
+            @* </td> *@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.UsId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.UsId">Details</a> |
@@ -161,40 +172,102 @@
 </table>
 <style>
 
+    /* Style the action row */
+    .table tr td:last-child {
+        background-color: #f8f9fa; /* Light gray background */
+        text-align: center;
+    }
+
+        /* Style the action links with smaller size */
+        .table tr td:last-child a {
+            padding: 3px 7px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 2px;
+        }
+
+            .table tr td:last-child a[href*='Edit'] {
+                background-color: #ffc107; /* Yellow */
+            }
+
+            .table tr td:last-child a[href*='Details'] {
+                background-color: #17a2b8; /* Blue */
+            }
+
+            .table tr td:last-child a[href*='Delete'] {
+                background-color: #dc3545; /* Red */
+            }
+
+            .table tr td:last-child a:hover {
+                opacity: 0.8;
+            }
+
+    /* Table Styling */
     .table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
     }
 
         .table th, .table td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px 15px;
             text-align: left;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
         }
 
+        /* Table Header */
         .table th {
-            background-color: #007bff;
-            color: white;
-            font-weight: bold;
+            background-color: #004085;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        /* Alternate row colors */
         .table tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f8f9fa;
         }
 
+        /* Hover effect */
         .table tr:hover {
-            background-color: #ddd;
+            background-color: #e2e6ea;
         }
 
+    /* Link Styling */
     a {
-        color: #007bff;
+        color: #004085;
+        font-weight: 600;
         text-decoration: none;
-        font-weight: bold;
+        transition: color 0.3s ease;
     }
 
         a:hover {
+            color: #002752;
             text-decoration: underline;
         }
 
+    /* Button-like Links */
+    .action-links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 6px 12px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .action-links a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+  
 </style>

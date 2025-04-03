@@ -66,19 +66,27 @@ namespace M_Suite.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "User");
-
         }
 
-        // GET: User
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search = null)
         {
-            var maliaContext = _context.Users.Include(u => u.UsUs);
-            return View(await maliaContext.ToListAsync());
+            var users = _context.Users.AsQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                users = users.Where(u => u.UsLogin.Contains(search));
+            }
+
+            return View(await users.ToListAsync());
         }
+
+
+
 
         // GET: User/Details/5
         public async Task<IActionResult> Details(int? id)

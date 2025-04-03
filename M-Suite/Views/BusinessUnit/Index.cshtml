@@ -1,101 +1,202 @@
 ﻿@model IEnumerable<M_Suite.Models.BusinessUnit>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Business Units";
 }
 
-<h1>Index</h1>
+<h1>Business Units</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Business Unit</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BuCode)
+                Business Unit Code
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BuDescriptionLan1)
+                Description (English)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BuDescriptionLan2)
+                Description (Arabic)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BuDescriptionLan3)
+                Description (Franch)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BuPath)
+                Path
             </th>
+            @* <th> *@
+            @*     Import UID *@
+            @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.BuImpUid)
+                Location ID
             </th>
+            @* <th> *@
+            @*     OU ID (Organizational Unit) *@
+            @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.BuLeId)
+                Organization Code
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuOuId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuOrgCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuPrefix)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuBu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuCp)
-            </th>
+            @* <th> *@
+            @*     Prefix *@
+            @* </th> *@
+            @* <th> *@
+            @*     Business Unit ID (Nested) *@
+            @* </th> *@
+            @* <th> *@
+            @*     Contact Person ID (Nested) *@
+            @* </th> *@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuDescriptionLan1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuDescriptionLan2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuDescriptionLan3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuPath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuImpUid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuLeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuOuId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuOrgCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuPrefix)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuBu.BuId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuCp.CpId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BuId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BuId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BuId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuDescriptionLan1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuDescriptionLan2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuDescriptionLan3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuPath)
+                </td>
+                @* <td> *@
+                @*     @Html.DisplayFor(modelItem => item.BuImpUid) *@
+                @* </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuLeId)
+                </td>
+                @* <td> *@
+                @*     @Html.DisplayFor(modelItem => item.BuOuId) *@
+                @* </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuOrgCode)
+                </td>
+                @* <td> *@
+                @*     @Html.DisplayFor(modelItem => item.BuPrefix) *@
+                @* </td> *@
+                @* <td> *@
+                @*     @Html.DisplayFor(modelItem => item.BuBu.BuId) <!-- Nested Business Unit ID --> *@
+                @* </td> *@
+                @* <td> *@
+                @*     @Html.DisplayFor(modelItem => item.BuCp.CpId) <!-- Nested Contact Person ID --> *@
+                @* </td> *@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BuId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BuId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BuId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<style>
+
+    /* Style the action row */
+    .table tr td:last-child {
+        background-color: #f8f9fa; /* Light gray background */
+        text-align: center;
+    }
+
+        /* Style the action links with smaller size */
+        .table tr td:last-child a {
+            padding: 3px 7px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 2px;
+        }
+
+            .table tr td:last-child a[href*='Edit'] {
+                background-color: #ffc107; /* Yellow */
+            }
+
+            .table tr td:last-child a[href*='Details'] {
+                background-color: #17a2b8; /* Blue */
+            }
+
+            .table tr td:last-child a[href*='Delete'] {
+                background-color: #dc3545; /* Red */
+            }
+
+            .table tr td:last-child a:hover {
+                opacity: 0.8;
+            }
+
+    /* Table Styling */
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Table Header */
+        .table th {
+            background-color: #004085;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Alternate row colors */
+        .table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Hover effect */
+        .table tr:hover {
+            background-color: #e2e6ea;
+        }
+
+    /* Link Styling */
+    a {
+        color: #004085;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #002752;
+            text-decoration: underline;
+        }
+
+    /* Button-like Links */
+    .action-links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 6px 12px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .action-links a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+</style>

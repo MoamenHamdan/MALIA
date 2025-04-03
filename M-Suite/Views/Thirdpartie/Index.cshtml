@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Customers</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ThpOrgId)
+               Organization ID
             </th>
             @* <th> *@
             @*     @Html.DisplayNameFor(model => model.ThpCdIdTpg) *@
@@ -22,10 +22,10 @@
             @*     @Html.DisplayNameFor(model => model.ThpCdIdTps) *@
             @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.ThpCode)
+               Code
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThpNameLan1)
+                Name
             </th>
             @* <th> *@
             @*     @Html.DisplayNameFor(model => model.ThpNameLan2) *@
@@ -34,22 +34,22 @@
             @*     @Html.DisplayNameFor(model => model.ThpNameLan3) *@
             @* </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.ThpIsCustomer)
+                Is Customer
             </th>
            <th>
-				@Html.DisplayNameFor(model => model.ThpIsSupplier)
+                Is Supplier
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThpIsCompany)
+                Is Company
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThpCreateDate)
+                Create Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThpModifiedDate)
+                 Modified Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ThpActive)
+                IsActive
             </th>
             @* <th> *@
             @*     @Html.DisplayNameFor(model => model.ThpImpUid) *@
@@ -87,24 +87,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ThpOrgId)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpCdIdTpg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpCdIdTps)
-            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpCdIdTpg) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpCdIdTps) *@
+            @* </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.ThpCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ThpNameLan1)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpNameLan2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpNameLan3)
-            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpNameLan2) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpNameLan3) *@
+            @* </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.ThpIsCustomer)
             </td>
@@ -123,33 +123,33 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ThpActive)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpImpUid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpRemarks)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpImported)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpReadonly)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpUsIdCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpNewcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpPrintLang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpPrintarabic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThpIsB2b)
-            </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpImpUid) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpRemarks) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpImported) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpReadonly) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpUsIdCreated) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpNewcode) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpPrintLang) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpPrintarabic) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.ThpIsB2b) *@
+            @* </td> *@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ThpId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ThpId">Details</a> |
@@ -159,3 +159,103 @@
 }
     </tbody>
 </table>
+<style>
+
+    /* Style the action row */
+    .table tr td:last-child {
+        background-color: #f8f9fa; /* Light gray background */
+        text-align: center;
+    }
+
+        /* Style the action links with smaller size */
+        .table tr td:last-child a {
+            padding: 3px 7px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 2px;
+        }
+
+            .table tr td:last-child a[href*='Edit'] {
+                background-color: #ffc107; /* Yellow */
+            }
+
+            .table tr td:last-child a[href*='Details'] {
+                background-color: #17a2b8; /* Blue */
+            }
+
+            .table tr td:last-child a[href*='Delete'] {
+                background-color: #dc3545; /* Red */
+            }
+
+            .table tr td:last-child a:hover {
+                opacity: 0.8;
+            }
+
+    /* Table Styling */
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Table Header */
+        .table th {
+            background-color: #004085;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Alternate row colors */
+        .table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Hover effect */
+        .table tr:hover {
+            background-color: #e2e6ea;
+        }
+
+    /* Link Styling */
+    a {
+        color: #004085;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #002752;
+            text-decoration: underline;
+        }
+
+    /* Button-like Links */
+    .action-links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 6px 12px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .action-links a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+</style>
