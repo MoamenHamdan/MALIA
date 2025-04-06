@@ -29,14 +29,11 @@ namespace M_Suite.Controllers
             return View();
         }
 
-        //private bool VerifyPassword(string inputPassword, string storedPassword)
-        //{
-        //    return BCrypt.Net.BCrypt.Verify(inputPassword, storedPassword);
-        //}
-
 
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password)
+       
+            // FirstOrDefault: It fetches the first element from the collection that matches the specified condition
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.UsLogin == username);
             if (user == null || user.UsPassword != password)
@@ -54,7 +51,10 @@ namespace M_Suite.Controllers
 
          };
             //handling user authentication using cookie-based authentication
+            //ClaimsIdentity is an identity object that holds a collection of claims
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+
             var authProperties = new AuthenticationProperties();
 
             await HttpContext.SignInAsync(
@@ -74,11 +74,21 @@ namespace M_Suite.Controllers
         }
 
         // GET: User
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var maliaContext = _context.Users.Include(u => u.UsUs);
+            var maliaContext = _context.Users.Include(u => u.UsUs).AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                maliaContext = maliaContext.Where(n =>
+                    n.UsLogin.Contains(searchString) ||
+                    n.UsFirstName.Contains(searchString)
+                );
+            }
+
             return View(await maliaContext.ToListAsync());
         }
+
 
         // GET: User/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -102,6 +112,7 @@ namespace M_Suite.Controllers
         // GET: User/Create
         public IActionResult Create()
         {
+            ViewData["Title"] = "Create";
             ViewData["UsUsId"] = new SelectList(_context.Users, "UsId", "UsId");
             return View();
         }
@@ -112,6 +123,7 @@ namespace M_Suite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UsId,UsUsId,UsThpId,UsCdIdGen,UsCdIdTtl,UsCode,UsFirstName,UsLastName,UsShortName,UsLogin,UsPassword,UsEmail,UsReceiveNotification,UsExpiryDate,UsActive,UsDeleted,UsDbUser,UsImported,UsReadonly,UsToken,UsRoute,UsPrefix,UsType")] User user)
         {
+            //This checks whether the form data is valid
             if (ModelState.IsValid)
             {
                 _context.Add(user);
