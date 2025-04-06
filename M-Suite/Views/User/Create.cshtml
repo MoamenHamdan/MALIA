@@ -56,6 +56,9 @@
                      <span class="color-indicator color-red"></span>profile
                 </label>
                 <select @*asp-for= profile*@ class="form-control" />
+                        <option value="">-- Select Role --</option>
+                        <option value="Admin">Admin</option>
+                        <option value="SuperAdmin">Super Admin</option>
                 <span @*asp-validation-for="profile"*@ class="text-danger"></span>
                 </select>
             </div>
@@ -64,6 +67,7 @@
                      <span class="color-indicator color-green"></span>Supervisor
                 </label>
                 <select @*asp-for= supervisor*@ class="form-control" />
+                       
                 <span @*asp-validation-for="supervisor"*@ class="text-danger"></span>
                 </select>
             </div>
@@ -72,6 +76,9 @@
                      <span class="color-indicator color-green"></span>Gender
                 </label>
                 <select @*asp-for= gender*@ class="form-control" />
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                 <span @*asp-validation-for="gender"*@ class="text-danger"></span>
                 </select>
             </div>
