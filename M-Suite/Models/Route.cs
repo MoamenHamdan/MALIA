@@ -41,5 +41,17 @@ public partial class Route
 
     public int? RtExecutionMode { get; set; }
 
+    public virtual ICollection<RouteGeoLocation> RouteGeoLocations { get; set; } = new List<RouteGeoLocation>();
+
+    public virtual ICollection<RouteTask> RouteTasks { get; set; } = new List<RouteTask>();
+
+    public virtual ICollection<RouteThirdpartySite> RouteThirdpartySites { get; set; } = new List<RouteThirdpartySite>();
+
+    public virtual ICollection<RouteTransaction> RouteTransactions { get; set; } = new List<RouteTransaction>();
+
+    public virtual ICollection<RouteWarehouse> RouteWarehouses { get; set; } = new List<RouteWarehouse>();
+
+    public virtual Routestatus? RtRts { get; set; }
+
     public virtual User? RtUs { get; set; }
 }

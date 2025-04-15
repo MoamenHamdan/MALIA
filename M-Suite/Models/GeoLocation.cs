@@ -20,4 +20,20 @@ public partial class GeoLocation
     public string? GlDescriptionLan2 { get; set; }
 
     public string? GlDescriptionLan3 { get; set; }
+
+    public virtual ICollection<GeoFence> GeoFences { get; set; } = new List<GeoFence>();
+
+    public virtual ICollection<ItemMslGl> ItemMslGls { get; set; } = new List<ItemMslGl>();
+
+    public virtual ICollection<ProspectThirdpartysite> ProspectThirdpartysites { get; set; } = new List<ProspectThirdpartysite>();
+
+    public virtual ICollection<RouteGeoLocation> RouteGeoLocations { get; set; } = new List<RouteGeoLocation>();
+
+    public virtual ICollection<TargetDetail> TargetDetails { get; set; } = new List<TargetDetail>();
+
+    public virtual ICollection<ThirdpartyAdditionalInfo> ThirdpartyAdditionalInfos { get; set; } = new List<ThirdpartyAdditionalInfo>();
+
+    public virtual ICollection<ThirdpartySite> ThirdpartySites { get; set; } = new List<ThirdpartySite>();
+
+    public virtual ICollection<ThpsInventoryheaderGl> ThpsInventoryheaderGls { get; set; } = new List<ThpsInventoryheaderGl>();
 }

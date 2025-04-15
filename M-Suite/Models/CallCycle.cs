@@ -25,5 +25,9 @@ public partial class CallCycle
 
     public short? CcAutorenew { get; set; }
 
+    public virtual ICollection<CallCycleDetail> CallCycleDetails { get; set; } = new List<CallCycleDetail>();
+
+    public virtual Codesc? CcCdIdCytNavigation { get; set; }
+
     public virtual User? CcUs { get; set; }
 }

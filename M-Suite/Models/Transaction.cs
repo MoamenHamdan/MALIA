@@ -83,7 +83,49 @@ public partial class Transaction
 
     public DateTime? TsExportedDate { get; set; }
 
+    public virtual ICollection<CreditdebitnoteInvoice> CreditdebitnoteInvoices { get; set; } = new List<CreditdebitnoteInvoice>();
+
+    public virtual ICollection<DueInvoice> DueInvoices { get; set; } = new List<DueInvoice>();
+
+    public virtual ICollection<MovementLink> MovementLinks { get; set; } = new List<MovementLink>();
+
+    public virtual ICollection<Operation> Operations { get; set; } = new List<Operation>();
+
+    public virtual ICollection<RouteTransaction> RouteTransactions { get; set; } = new List<RouteTransaction>();
+
+    public virtual ICollection<TransactionItemPromotion> TransactionItemPromotions { get; set; } = new List<TransactionItemPromotion>();
+
+    public virtual ICollection<TransactionItem> TransactionItems { get; set; } = new List<TransactionItem>();
+
+    public virtual ICollection<TransactionLink> TransactionLinkTslTs { get; set; } = new List<TransactionLink>();
+
+    public virtual ICollection<TransactionLink> TransactionLinkTslTsIdLinkNavigations { get; set; } = new List<TransactionLink>();
+
+    public virtual ICollection<TransactionReason> TransactionReasons { get; set; } = new List<TransactionReason>();
+
+    public virtual ICollection<TransactionStatusHistory> TransactionStatusHistories { get; set; } = new List<TransactionStatusHistory>();
+
+    public virtual ICollection<TransactionTax> TransactionTaxes { get; set; } = new List<TransactionTax>();
+
     public virtual BusinessUnit TsBu { get; set; } = null!;
 
+    public virtual Codesc? TsCdIdCmsNavigation { get; set; }
+
+    public virtual Codesc TsCdIdCurNavigation { get; set; } = null!;
+
+    public virtual Codesc TsCdIdSrcNavigation { get; set; } = null!;
+
+    public virtual SignatureDetail? TsSgd { get; set; }
+
+    public virtual ThirdpartySite? TsThpsIdBillNavigation { get; set; }
+
+    public virtual ThirdpartySite? TsThpsIdShipNavigation { get; set; }
+
+    public virtual Transactionstatus? TsTss { get; set; }
+
+    public virtual Transactiontype1 TsTst { get; set; } = null!;
+
     public virtual User? TsUs { get; set; }
+
+    public virtual Visit? TsVt { get; set; }
 }

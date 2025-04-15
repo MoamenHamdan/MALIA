@@ -21,6 +21,10 @@ public partial class ItemUom
 
     public decimal? ItuConvValueIni { get; set; }
 
+    public virtual ICollection<ItemUomAdditionalInfo> ItemUomAdditionalInfos { get; set; } = new List<ItemUomAdditionalInfo>();
+
+    public virtual ICollection<ItemUomBarcode> ItemUomBarcodes { get; set; } = new List<ItemUomBarcode>();
+
     public virtual Item ItuIt { get; set; } = null!;
 
     public virtual Uom ItuUom { get; set; } = null!;

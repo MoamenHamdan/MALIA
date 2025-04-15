@@ -46,4 +46,10 @@ public partial class Report
     public int RpUsIdCreatedby { get; set; }
 
     public int? RpUsIdModifiedby { get; set; }
+
+    public virtual ICollection<ReportMail> ReportMails { get; set; } = new List<ReportMail>();
+
+    public virtual ICollection<ReportRequest> ReportRequests { get; set; } = new List<ReportRequest>();
+
+    public virtual ICollection<ReportSchedule> ReportSchedules { get; set; } = new List<ReportSchedule>();
 }

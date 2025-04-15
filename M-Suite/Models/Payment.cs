@@ -59,5 +59,27 @@ public partial class Payment
 
     public virtual BusinessUnit? PaBu { get; set; }
 
+    public virtual Codesc PaCdIdCurNavigation { get; set; } = null!;
+
+    public virtual Codesc? PaCdIdPatNavigation { get; set; }
+
+    public virtual Codesc? PaCdIdSrcNavigation { get; set; }
+
+    public virtual Movement? PaMv { get; set; }
+
+    public virtual ThirdpartySite? PaThps { get; set; }
+
     public virtual User? PaUs { get; set; }
+
+    public virtual Visit? PaVt { get; set; }
+
+    public virtual ICollection<PaymentDetail> PaymentDetails { get; set; } = new List<PaymentDetail>();
+
+    public virtual ICollection<PaymentImage> PaymentImages { get; set; } = new List<PaymentImage>();
+
+    public virtual ICollection<PaymentInvoice> PaymentInvoices { get; set; } = new List<PaymentInvoice>();
+
+    public virtual ICollection<PaymentStatusHistory> PaymentStatusHistories { get; set; } = new List<PaymentStatusHistory>();
+
+    public virtual ICollection<UserPaymentDetail> UserPaymentDetails { get; set; } = new List<UserPaymentDetail>();
 }

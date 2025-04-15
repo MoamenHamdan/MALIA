@@ -34,4 +34,10 @@ public partial class Display
     public DateTime? DpsCreationDate { get; set; }
 
     public DateTime? DpsUpdateDate { get; set; }
+
+    public virtual Codesc? Cd { get; set; }
+
+    public virtual Codesc? DspCdIdDsptpNavigation { get; set; }
+
+    public virtual ThirdpartySite DspThps { get; set; } = null!;
 }
