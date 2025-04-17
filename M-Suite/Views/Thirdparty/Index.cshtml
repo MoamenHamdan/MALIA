@@ -1,0 +1,161 @@
+﻿@model IEnumerable<M_Suite.Models.Thirdparty>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpOrgId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpNameLan1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpNameLan2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpNameLan3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpIsCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpIsSupplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpIsCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpCreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpImpUid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpRemarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpImported)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpReadonly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpUsIdCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpNewcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpPrintLang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpPrintarabic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpIsB2b)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpCdIdTpgNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThpCdIdTpsNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpOrgId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpNameLan1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpNameLan2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpNameLan3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpIsCustomer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpIsSupplier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpIsCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpCreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpModifiedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpImpUid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpRemarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpImported)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpReadonly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpUsIdCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpNewcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpPrintLang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpPrintarabic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpIsB2b)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpCdIdTpgNavigation.CdId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThpCdIdTpsNavigation.CdId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ThpId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ThpId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ThpId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
