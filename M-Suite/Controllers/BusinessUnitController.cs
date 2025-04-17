@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using M_Suite.Context;
+using M_Suite.Data;
 using M_Suite.Models;
 
 namespace M_Suite.Controllers
 {
     public class BusinessUnitController : Controller
     {
-        private readonly MaliaContext _context;
+        private readonly MSuiteContext _context;
 
-        public BusinessUnitController(MaliaContext context)
+        public BusinessUnitController(MSuiteContext context)
         {
             _context = context;
         }

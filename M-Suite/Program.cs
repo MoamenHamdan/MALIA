@@ -1,4 +1,4 @@
-using M_Suite.Context;
+using M_Suite.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<MaliaContext>(options =>
+builder.Services.AddDbContext<MSuiteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MSuiteContext")));
 
 //we need to add Authentication Services

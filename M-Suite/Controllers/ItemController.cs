@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using M_Suite.Context;
+using M_Suite.Data;
 using M_Suite.Models;
 
 namespace M_Suite.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly Context.MaliaContext _context;
+        private readonly MSuiteContext _context;
 
-        public ItemController(Context.MaliaContext context)
+        public ItemController(MSuiteContext context)
         {
             _context = context;
         }
