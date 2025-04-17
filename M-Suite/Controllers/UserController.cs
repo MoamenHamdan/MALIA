@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using M_Suite.Context;
+using M_Suite.Data;
 using M_Suite.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
@@ -15,9 +15,9 @@ namespace M_Suite.Controllers
 {
     public class UserController : Controller
     {
-        private readonly Context.MaliaContext _context;
+        private readonly MSuiteContext _context;
 
-        public UserController(Context.MaliaContext context)
+        public UserController(MSuiteContext context)
         {
             _context = context;
         }
