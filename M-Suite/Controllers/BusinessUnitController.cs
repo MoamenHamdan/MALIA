@@ -49,13 +49,12 @@ namespace M_Suite.Controllers
         // GET: BusinessUnit/Create
         public IActionResult Create()
         {
-            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuId");
-            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpId");
+            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuDescriptionLan1");
+            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpNameLan1");
             return View();
         }
 
         // POST: BusinessUnit/Create
-   
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BuId,BuBuId,BuCpId,BuCode,BuDescriptionLan1,BuDescriptionLan2,BuDescriptionLan3,BuPath,BuImpUid,BuLeId,BuOuId,BuOrgCode,BuPrefix")] BusinessUnit businessUnit)
@@ -66,8 +65,8 @@ namespace M_Suite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuId", businessUnit.BuBuId);
-            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpId", businessUnit.BuCpId);
+            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuDescriptionLan1", businessUnit.BuBuId);
+            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpNameLan1", businessUnit.BuCpId);
             return View(businessUnit);
         }
 
@@ -84,8 +83,8 @@ namespace M_Suite.Controllers
             {
                 return NotFound();
             }
-            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuId", businessUnit.BuBuId);
-            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpId", businessUnit.BuCpId);
+            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuDescriptionLan1", businessUnit.BuBuId);
+            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpNameLan1", businessUnit.BuCpId);
             return View(businessUnit);
         }
 
@@ -119,8 +118,8 @@ namespace M_Suite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuId", businessUnit.BuBuId);
-            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpId", businessUnit.BuCpId);
+            ViewData["BuBuId"] = new SelectList(_context.BusinessUnits, "BuId", "BuDescriptionLan1", businessUnit.BuBuId);
+            ViewData["BuCpId"] = new SelectList(_context.Companies, "CpId", "CpNameLan1", businessUnit.BuCpId);
             return View(businessUnit);
         }
 
